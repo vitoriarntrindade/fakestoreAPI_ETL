@@ -15,6 +15,7 @@
 Este projeto segue o padrão **Adapter**. A API FakeStore é consumida, os dados são transformados (com timestamp e ajustes de formato) e armazenados no banco MySQL. A aplicação expõe endpoints para recuperação dos dados processados.
 
 📌 **Fluxo do ETL:**
+
 1️⃣ **Extract** - Baixa os produtos da API FakeStore.
 
 2️⃣ **Transform** - Adiciona timestamp e adapta os dados.
@@ -118,7 +119,7 @@ Exemplo do relatório gerado:
 
 ## ⚡ **Contato**
 
-🔹 **LinkedIn**: [linkedin.com/in/seu-perfil](https://linkedin.com/in/vitoria-raymara)  
+🔹 **LinkedIn**: [linkedin.com/in/vitoria-raymara](https://linkedin.com/in/vitoria-raymara)  
 
 
 
