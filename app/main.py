@@ -1,13 +1,9 @@
 from fastapi import FastAPI
-from app.config.db import  engine, Base
-from .api import router_products
+from .database.db import engine, Base
+from .api.routes import router
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="FakeStore API")
+app = FastAPI(title="FakeStore ETL API")
 
-app.include_router(products.router, prefix="/api", tags=["Products"])
-
-@app.get("/")
-def home():
-    return {"message": "Welcome to FakeStore API"}
+app.include_router(router, prefix="/api", tags=["ETL"])
