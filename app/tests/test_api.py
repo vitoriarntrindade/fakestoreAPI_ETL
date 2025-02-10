@@ -1,6 +1,6 @@
 def test_create_product(client):
     """Testa a criação de produtos via API ETL"""
-    response = client.post("/api/etl/start")
+    response = client.post("/api/products")
     
     assert response.status_code == 200 
     data = response.json()
@@ -13,7 +13,7 @@ def test_get_products(client):
     """Testa a listagem de produtos"""
     
     # Primeiro, rodamos o ETL para garantir que existam produtos no banco
-    client.post("/api/etl/start")
+    client.post("/api/products")
     
     # Agora, testamos o GET /api/products
     response = client.get("/api/products")
@@ -22,5 +22,5 @@ def test_get_products(client):
     data = response.json()
     
     assert isinstance(data, list)
-    assert len(data) > 0  # Confirma que pelo menos 1 produto foi inserido
-    assert "name" in data[0]  # Verifica se os produtos têm nome
+    assert len(data) > 0
+    assert "name" in data[0]
