@@ -9,7 +9,7 @@ from fastapi.responses import FileResponse
 
 router = APIRouter()
 
-@router.post("/etl/start")
+@router.post("/products")
 def start_etl(db: Session = Depends(get_db)):
     return run_etl(db)
 
