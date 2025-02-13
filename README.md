@@ -48,8 +48,8 @@ Este projeto segue o padrão **Adapter**. A API FakeStore é consumida, os dados
 
 ### 🔹 **1. Clone o Repositório**
 ```bash
-git clone https://github.com/seu-usuario/fakestoreAPI_ETL.git
-cd fakestoreAPI_ETL
+git clone https://github.com/vitoriarntrindade//fastapi-etl-pipeline.git
+cd fastapi-etl-pipeline
 ```
 
 ### 🔹 **2. Configure o Ambiente Virtual**
@@ -82,9 +82,9 @@ uvicorn app.main:app --reload
 ## 🔍 **Endpoints Disponíveis**
 | Método  | Endpoint        | Descrição |
 |---------|---------------|------------|
-| `POST`  | `/api/etl/start` | Inicia o processo ETL |
-| `GET`   | `/api/products` | Retorna todos os produtos processados |
-| `GET`   | `/api/report` | Gera e baixa o relatório Excel |
+| `POST`  | `/products` | Inicia o processo ETL |
+| `GET`   | `/products` | Retorna todos os produtos processados |
+| `GET`   | `/report` | Gera e baixa o relatório Excel |
 
 ---
 
@@ -94,7 +94,7 @@ uvicorn app.main:app --reload
 ```bash
 pytest -v
 ```
-📌 **Testes de Upload Automático com Playwright** (em desenvolvimento)
+📌 **Testes de Upload Automático com Playwright** 
 ```bash
 pytest app/tests/test_upload.py -v
 ```
@@ -104,7 +104,7 @@ pytest app/tests/test_upload.py -v
 ## 📊 **Gerando Relatórios**
 A API gera um **relatório Excel com estatísticas e gráficos**:
 ```bash
-curl -X GET http://127.0.0.1:8000/api/relatorio -o relatorio.xlsx
+curl -X GET http://127.0.0.1:8000/report -o relatorio.xlsx
 ```
 
 Exemplo do relatório gerado:
